@@ -163,7 +163,7 @@ antXMLRunner = Tasty.TestReporter optionDescription runner
         return $ \elapsedTime -> do
           createPathDirIfMissing path
           writeFile path $
-            XML.showTopElement $
+            XML.ppTopElement $
               XML.node
                 (XML.unqual "testsuites")
                 ([ XML.Attr (XML.unqual "errors")
